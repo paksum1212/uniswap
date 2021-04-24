@@ -46,17 +46,9 @@ export default {
 }
 
 .icon {
-  position: relative;
-  display: inline-block;
-  background: #ffffff;
-  padding: 0px;
-  margin: 0px;
-  border-radius: 50%;
   vertical-align: text-bottom;
-  z-index: 10;
 }
 .icon > img {
-  float: left;
   width: 30px;
   height: 30px;
 }
@@ -64,6 +56,7 @@ export default {
   margin-left: -15px;
   z-index: 5;
 }
+
 .title {
   margin-left: 20px;
   font-size: 30px;

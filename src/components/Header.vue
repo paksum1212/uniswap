@@ -32,5 +32,5 @@ export default {
 </script>
 
 <style scoped>
-.header { font-size: 20px; }
+
 </style>

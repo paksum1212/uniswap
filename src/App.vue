@@ -38,9 +38,24 @@ body {
   margin: 30px auto;
   padding: 10px;
   max-width: 1280px;
+  font-size: 16px;
 }
 
-/* Common */
+/* Icons */
+.icon {
+  position: relative;
+  display: inline-block;
+  background: #ffffff;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 50%;
+  z-index: 10;
+}
+.icon > img {
+  float: left;
+}
+
+/* Buttons */
 .btn-add {
   display: inline-block;
   width: 20px;
@@ -62,6 +77,7 @@ body {
   text-align: center;
   display: block;
   line-height: 100%;
+  font-size: 20px;
 }
 .btn-std {
   display: inline-block;
@@ -79,5 +95,16 @@ body {
   color: #1A539A;
   background: #192C4C;
   cursor: default;
+}
+
+/* Cards */
+.card {
+  display: inline-block;
+  border: 1px solid #36465F;
+  border-radius: 10px;
+  padding: 6px 15px;
+}
+.card:not(:first-of-type) {
+  margin-left: 15px;
 }
 </style>
