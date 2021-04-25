@@ -41,6 +41,16 @@ body {
   font-size: 16px;
 }
 
+.pos {
+  color: #22ab55 !important;
+}
+.neg {
+  color: #e85e5f !important;
+}
+.unc {
+  color: #666666 !important;
+}
+
 /* Icons */
 .icon {
   position: relative;
@@ -103,8 +113,9 @@ body {
   border: 1px solid #36465F;
   border-radius: 10px;
   padding: 6px 15px;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 }
-.card:not(:first-of-type) {
-  margin-left: 15px;
+.card.sel {
+  background: #41444D;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="top-bar">
     <div>
-      <span class="icon"><img v-bind:src="images.icon(this.$code1)" /></span>
-      <span class="icon"><img v-bind:src="images.icon(this.$code2)" /></span>
+      <span class="icon"><img v-bind:src="icon(this.$code1)" /></span>
+      <span class="icon"><img v-bind:src="icon(this.$code2)" /></span>
       <span class="title">{{ title }}</span>
     </div>
     <div>
@@ -20,12 +20,8 @@ export default {
     title: String,
     enable: Object
   },
-  data() {
-    return {
-      images: {
-        icon: (code) => require('@/assets/icons/' + code + '.png')
-      }
-    }
+  methods: {
+    icon: (code) => require('@/assets/icons/' + code + '.png')
   }
 }
 </script>
