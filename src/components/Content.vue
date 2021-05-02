@@ -6,7 +6,7 @@
         <DataCard title="Total Liquidity" :data=data.total_liquidity />
         <DataCard title="Volume (24hr)" :data=data.volume_24hr />
         <DataCard title="Fees (24hr)" :data=data.fees_24hr />
-        <DataCard title="Pooled Tokens" :data=data.pooled_tokens />
+        <DataCard title="Pooled Tokens" :data=getPooledTokens(pairs) />
       </div>
       <div>
         <ChartPanel />
@@ -18,6 +18,8 @@
 <script>
 import DataCard from './Content/DataCard.vue'
 import ChartPanel from './Content/ChartPanel.vue'
+import gqlController from '../graphql'
+import utility from '../utility'
 
 export default {
   name: 'Content',
@@ -27,6 +29,21 @@ export default {
   components: {
     DataCard,
     ChartPanel
+  },
+  methods: {
+    getPooledTokens: (pairs) => {
+      if (pairs && pairs.length > 0) {
+        return {
+          quantity1: utility.formatPrice(pairs[0].reserve0),
+          quantity2: utility.formatPrice(pairs[0].reserve1)
+        };
+      } else {
+        return {
+          quantity1: "",
+          quantity2: ""
+        };
+      }
+    }
   },
   data () {
     return {
@@ -44,12 +61,15 @@ export default {
           price: "US$7,122",
           change: "+244%"
         },
-        pooled_tokens: {
-          quantity1: "3,894",
-          quantity2: "73,771,822"
-        }
+        // pooled_tokens: {
+        //   quantity1: "3,894",
+        //   quantity2: "73,771,822"
+        // }
       }
     }
+  },
+  apollo: {
+    pairs: gqlController.getPairs()
   }
 }
 </script>
